@@ -2,11 +2,11 @@ const audio  = document.getElementById('audioPlayer');
 const volume = document.getElementById('audio_volume'); 
 const bass   = document.getElementById('bass'); 
 const treble = document.getElementById('treble'); 
-const back   = document.getElementById('back'); 
-const play   = document.getElementById('play'); 
-const pause  = document.getElementById('pause'); 
-const stop   = document.getElementById('stop'); 
-const forw   = document.getElementById('forw');
+const back   = document.getElementById('pback'); 
+const play   = document.getElementById('pplay'); 
+const pause  = document.getElementById('ppause'); 
+const stop   = document.getElementById('pstop'); 
+const forw   = document.getElementById('pforw');
 const volumen = document.getElementById('volumen'); 
 const loader = document.getElementById('loader'); 
 
@@ -15,14 +15,12 @@ const player = {};
 
 player.new_song = (sourse) => {
     sourse = sourse.trim();
-    sours = `audio/${sourse}`; 
-    console.log(sours);
+    sours = `audio/${sourse}`;
     audio.src = sours; 
     audio.load(); 
     audio.play()
     player.volume(); 
     timer = setInterval(player.duration,100);
-    console.log(audio.paused);   
     return; 
 }
 
@@ -75,7 +73,7 @@ volumen.addEventListener("input" , player.volume);
 back.addEventListener("click", player.back()); 
 forw.addEventListener("click", player.forw()); 
 play.addEventListener("click", player.play()); 
-pause.addEventListener("click", ()=>{
+pause.addEventListener("click", function() {
     audio.pause();
     console.log("evo ovo");
 }); 
@@ -83,7 +81,8 @@ stop.addEventListener("click", player.stop());
 
 document.addEventListener("click", function(event) {
     if(event.target.nodeName === "LI" || event.target.nodeName === "li") {
-        console.log(event.target.childNodes[0].nodeValue)
-        player.new_song(event.target.childNodes[0].nodeValue) 
+        player.new_song(event.target.childNodes[0].nodeValue);
+    } else {
+        console.log(event.target.nodeValue);
     }
 });

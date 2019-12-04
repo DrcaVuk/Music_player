@@ -29,14 +29,14 @@ $list = scandir($dir);
                 <div class="container-fluid loader_div">
                 <div class="bg-info" id="loader"></div>
                 </div>
-                    <audio id="audioPlayer" src="audio/Desert_Caravan.mp3"></audio>
+                    <audio id="audioPlayer" src=""></audio>
                 <div class="container-fluid border">
                    <div class="row p-2">
-                    <div class="col-1"><i id="back" class="fas fa-backward comm"></i></div>
-                    <div class="col-2"><i id="play" class="far fa-play-circle comP"></i></div>
-                    <div class="col-1"><i id="pause" class="fas fa-pause comm"></i></div>
-                    <div class="col-1"><i id="stop" class="fas fa-stop comm"></i></div>
-                    <div class="col-1"><i id="forw" class="fas fa-forward comm"></i></div>
+                    <div class="col-1"><span id="pback"><i class="fas fa-backward comm"></i></span></div>
+                    <div class="col-2"><span id="pplay"><i class="far fa-play-circle comP"></i></span></div>
+                    <div class="col-1"><span id="ppause"><i class="fas fa-pause comm"></i></span></div>
+                    <div class="col-1"><span id="pstop"><i class="fas fa-stop comm"></i></span></div>
+                    <div class="col-1"><span id="pforw"><i class="fas fa-forward comm"></i></span></div>
                     <div class="col-4 offset-1">
                         <input id="volumen" type="range" min="0" max="100" value="50" class="custom-range m-1" id="customRange1">
                     </div>
