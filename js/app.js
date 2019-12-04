@@ -77,6 +77,7 @@ forw.addEventListener("click", player.forw());
 play.addEventListener("click", player.play()); 
 pause.addEventListener("click", ()=>{
     audio.pause();
+    console.log("evo ovo");
 }); 
 stop.addEventListener("click", player.stop()); 
 
