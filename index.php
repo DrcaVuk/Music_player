@@ -23,8 +23,8 @@ $list = scandir($dir);
         </div>
         <div class="row p-1">
             <div class="col-12 col-sm-12 col-md-6 co-lg-6 col-xl-6">
-                <div class="container-fluid border" id="visuel"> 
-                  <div class="container-fluid p-2 bg-info"></div>
+                <div class="container-fluid border  p-0" id="visuel"> 
+                    <canvas id="canvas"></canvas>
                 </div>
                 <div class="container-fluid loader_div">
                 <div class="bg-info" id="loader"></div>

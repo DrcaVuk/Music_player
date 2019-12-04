@@ -1,7 +1,5 @@
 const audio  = document.getElementById('audioPlayer'); 
 const volume = document.getElementById('audio_volume'); 
-const bass   = document.getElementById('bass'); 
-const treble = document.getElementById('treble'); 
 const back   = document.getElementById('pback'); 
 const play   = document.getElementById('pplay'); 
 const pause  = document.getElementById('ppause'); 
@@ -9,8 +7,9 @@ const stop   = document.getElementById('pstop');
 const forw   = document.getElementById('pforw');
 const volumen = document.getElementById('volumen'); 
 const loader = document.getElementById('loader'); 
+const myCanvas = document.getElementById('canvas'); 
 
-var sours,vol,timer,duration; 
+var sours,vol,timer,duration, audioCtx; 
 const player = {}; 
 
 player.new_song = (sourse) => {
@@ -25,7 +24,7 @@ player.new_song = (sourse) => {
 }
 
 player.play = () => {
-      if(audio.paused == 'false'){
+      if(audio.paused){
         audio.play();
       }
         return;
@@ -33,7 +32,6 @@ player.play = () => {
 
 player.pause = () => {
         audio.pause();
-        console.log(audio.paused);
         return;
 }
 
@@ -54,7 +52,7 @@ player.back = () => {
 }
 
 player.forw = () => {
-    audio.currentTime = audio.currentTime - 1;
+    audio.currentTime = audio.currentTime + 1;
     return;
 }
 
@@ -68,21 +66,22 @@ player.duration = () => {
     }
 }
 
+player.canvas = () => {
+    audioCtx = new AudioContext(); 
+    let sours = audioCtx.createMediaElementSource(audio);   
+    let analiser = "";
+}
+
 volumen.addEventListener("input" , player.volume);
 
-back.addEventListener("click", player.back()); 
-forw.addEventListener("click", player.forw()); 
-play.addEventListener("click", player.play()); 
-pause.addEventListener("click", function() {
-    audio.pause();
-    console.log("evo ovo");
-}); 
-stop.addEventListener("click", player.stop()); 
+back.addEventListener("mousedown", player.back); 
+forw.addEventListener("click", player.forw); 
+play.addEventListener("click", player.play); 
+pause.addEventListener("click",player.pause); 
+stop.addEventListener("mousedown", player.stop); 
 
 document.addEventListener("click", function(event) {
     if(event.target.nodeName === "LI" || event.target.nodeName === "li") {
         player.new_song(event.target.childNodes[0].nodeValue);
-    } else {
-        console.log(event.target.nodeValue);
-    }
+    } 
 });
