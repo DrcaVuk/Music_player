@@ -69,7 +69,12 @@ player.duration = () => {
 player.canvas = () => {
     audioCtx = new AudioContext(); 
     let sours = audioCtx.createMediaElementSource(audio);   
-    let analiser = "";
+    let analiser = audioCtx.createAnalyser();
+
+    analiser.fftSize = 256; 
+    let bufferLarg = analiser.frequencyBinCount; 
+    console.log("buffer:");
+    console.log(bufferLarg); 
 }
 
 volumen.addEventListener("input" , player.volume);
