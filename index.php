@@ -43,7 +43,7 @@ $list = scandir($dir);
                    </div>
                 </div>
             </div>
-            <div class="col-12 col-sm-12 col-md-6 co-lg-6 col-xl-6">
+            <div class="col-12 col-sm-12 col-md-6 co-l  g-6 col-xl-6">
                <ul class="list-group">
                <?php 
                   for($i = 2 ; $i < count($list); $i++) {  ?>
