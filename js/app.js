@@ -14,7 +14,7 @@ var canvasCtx = canvas.getContext("2d");
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 
-var audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+var audioCtx = new(window.AudioContext || window.webkitAudioContext)();
 var analyser = audioCtx.createAnalyser();
 
 var source = audioCtx.createMediaElementSource(audio); 
