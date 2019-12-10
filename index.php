@@ -17,17 +17,17 @@ $list = scandir($dir);
     <title>Audio recorder</title>
 </head>
 <body>
-    <div class="container text-white bg-dark">
+    <div class="container text-white bg-black">
         <div class="container">
             <!-- <h1 class="text-centar">PLAYER</h1> -->
         </div>
         <div class="row p-1">
             <div class="col-12 col-sm-12 col-md-6 co-lg-6 col-xl-6">
-                <div class="container-fluid border  p-0" id="visuel"> 
+                <div class="container-fluid   p-0" id="visuel"> 
                     <canvas id="canvas"></canvas>
                 </div>
                 <div class="container-fluid loader_div">
-                <div class="bg-info" id="loader"></div>
+                <div class="bg-blue" id="loader"></div>
                 </div>
                     <audio id="audioPlayer" src=""></audio>
                 <div class="container-fluid border">
@@ -38,7 +38,7 @@ $list = scandir($dir);
                     <div class="col-1"><span id="pstop"><i class="fas fa-stop comm"></i></span></div>
                     <div class="col-1"><span id="pforw"><i class="fas fa-forward comm"></i></span></div>
                     <div class="col-4 offset-1">
-                        <input id="volumen" type="range" min="0" max="100" value="50" class="custom-range m-1" id="customRange1">
+                        <input id="volumen" type="range" min="0" max="100" value="50">
                     </div>
                    </div>
                 </div>
